@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>X-ENERGI™ | Electric Motorcycle + Battery Swap Ecosystem</title>
+  <title>X-ENERGI | Electric Motorcycle + Battery Swap Ecosystem</title>
   <meta name="description"
     content="Green Powered · Profit Driven · Partner Enabled. Transforming African last-mile delivery with clean, efficient, and cost-effective solutions." />
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <header id="header">
     <nav class="container">
       <div class="logo">
-        <img src="./public/images/logo.jpg" alt="X-ENERGI" class="logo-img">
+        <img src="/images/logo.jpg" alt="X-ENERGI" class="logo-img">
       </div>
       <ul class="nav-links">
         <li><a href="#overview">Overview</a></li>
@@ -61,7 +61,7 @@
               creating a sustainable ecosystem that benefits riders, businesses, and the environment.</p>
           </div>
           <div class="overview-image">
-            <img src="./public/images/overview.png" alt="X-ENERGI Delivery Rider"
+            <img src="/images/overview.png" alt="X-ENERGI Delivery Rider"
               class="img-fluid rounded-lg shadow-lg">
           </div>
         </div>
@@ -126,22 +126,22 @@
         <h2 class="section-title">Our Ecosystem in Action</h2>
         <div class="gallery-grid">
           <div class="gallery-item item-1">
-            <img src="./public/images/pic1.jpg" alt="Electric Motorcycle">
+            <img src="/images/pic1.jpg" alt="Electric Motorcycle">
           </div>
           <div class="gallery-item item-2">
-            <img src="./public/images/pic2.jpg" alt="Battery Swap Station">
+            <img src="/images/pic2.jpg" alt="Battery Swap Station">
           </div>
           <div class="gallery-item item-3">
-            <img src="./public/images/pic3.jpg" alt="Rider in Action">
+            <img src="/images/pic3.jpg" alt="Rider in Action">
           </div>
           <div class="gallery-item item-4">
-            <img src="./public/images/pic4.jpg" alt="Solar Infrastructure">
+            <img src="/images/pic4.jpg" alt="Solar Infrastructure">
           </div>
           <div class="gallery-item item-5">
-            <img src="./public/images/pic14.png" alt="Happy Rider">
+            <img src="/images/pic14.png" alt="Happy Rider">
           </div>
           <div class="gallery-item item-6">
-            <img src="./public/images/pic7.jpg" alt="Battery Technology">
+            <img src="/images/pic7.jpg" alt="Battery Technology">
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@
             <h3>Electric Motorcycle</h3>
             <ul>
               <li>2000W high-performance motor</li>
-              <li>Range >80km per charge</li>
+              <li>Range &gt;80km per charge</li>
               <li>3-year guarantee on core components</li>
             </ul>
           </div>
@@ -204,22 +204,34 @@
               <strong>Address:</strong> Lusaka, Zambia
             </div>
             <div class="info-item">
-              <strong>WhatsApp/Phone:</strong> +260964317558
+              <strong>WhatsApp/Phone:</strong> +260975558888
             </div>
             <div class="info-item">
-              <strong>Email:</strong> info@x-energi.com
+              <strong>Email:</strong> v2sam@126.com
             </div>
           </div>
-          <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <select>
+          <form id="contact-form" class="contact-form">
+            <input id="name" name="name" type="text" placeholder="Your Name" required>
+            <input id="email" name="email" type="email" placeholder="Your Email" required>
+            <select id="interest" name="interest">
               <option value="" disabled selected>Interested In...</option>
-              <option value="rider">Rider Franchise</option>
-              <option value="station">Charging Station Franchise</option>
-              <option value="other">Other</option>
+              <option value="Rider Franchise">Rider Franchise</option>
+              <option value="Charging Station Franchise">Charging Station Franchise</option>
+              <option value="Other">Other</option>
             </select>
-            <textarea placeholder="Message" rows="5"></textarea>
+            <textarea id="message" name="message" placeholder="Message" rows="5"></textarea>
+
+            <div class="send-method">
+              <label>
+                <input type="radio" name="sendMethod" value="whatsapp" checked>
+                Send via WhatsApp
+              </label>
+              <label style="margin-left:12px;">
+                <input type="radio" name="sendMethod" value="email">
+                Send via Email
+              </label>
+            </div>
+
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
         </div>
@@ -252,6 +264,65 @@
   </div>
 
   <script defer src="./main.js"></script>
+
+  <script>
+    (function() {
+      const form = document.getElementById('contact-form');
+      if (form) {
+        const whatsappNumber = '260975558888';
+        const emailAddress = 'v2sam@126.com';
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = document.getElementById('name')?.value?.trim() || '';
+          const email = document.getElementById('email')?.value?.trim() || '';
+          const interest = document.getElementById('interest')?.value || '';
+          const message = document.getElementById('message')?.value?.trim() || '';
+          const method = document.querySelector('input[name="sendMethod"]:checked')?.value || 'whatsapp';
+
+          const parts = [];
+          if (name) parts.push(`Name: ${name}`);
+          if (email) parts.push(`Email: ${email}`);
+          if (interest) parts.push(`Interest: ${interest}`);
+          if (message) parts.push(`Message: ${message}`);
+
+          if (parts.length === 0) {
+            alert('Please fill at least one field before sending.');
+            return;
+          }
+
+          const text = parts.join('\n');
+
+          if (method === 'whatsapp') {
+            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+          } else {
+            const subject = interest ? `Inquiry: ${interest}` : 'Website Inquiry';
+            const mailto = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
+            window.location.href = mailto;
+          }
+        });
+      }
+
+      // Hamburger menu toggle
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (toggle && navLinks) {
+        toggle.addEventListener('click', function() {
+          const open = this.classList.toggle('open');
+          navLinks.classList.toggle('mobile-open', open);
+        });
+
+        // Close menu when link clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            toggle.classList.remove('open');
+            navLinks.classList.remove('mobile-open');
+          });
+        });
+      }
+    })();
+  </script>
+
 </body>
 
-</html>

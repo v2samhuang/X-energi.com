@@ -230,6 +230,7 @@ nav {
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     position: relative;
     background-image: lgitinear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/pic15.png');
     /* Placeholder Hero Image */

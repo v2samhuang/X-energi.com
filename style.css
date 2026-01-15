@@ -231,7 +231,7 @@ nav {
     display: flex;
     align-items: center;
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/pic9.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/pic15.png');
     /* Placeholder Hero Image */
     background-size: cover;
     background-position: center;

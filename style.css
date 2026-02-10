@@ -235,13 +235,14 @@ nav {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/pic15.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     max-width: 800px;
+    padding-left: var(--spacing-lg);
 }
 
 #hero h1 {
@@ -274,6 +275,19 @@ nav {
 
 .bg-darker {
     background-color: #111;
+}
+
+.rounded-lg {
+    border-radius: 12px;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
 }
 
 /* Overview */
@@ -977,11 +991,11 @@ nav {
     display: flex;
     align-items: center;
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/pic9.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/pic24.jpg');
     /* Placeholder Hero Image */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    
 }
 
 .hero-content {
@@ -1019,6 +1033,19 @@ nav {
 
 .bg-darker {
     background-color: #111;
+}
+
+.rounded-lg {
+    border-radius: 12px;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
 }
 
 /* Overview */

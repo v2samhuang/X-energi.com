@@ -1186,6 +1186,7 @@ nav {
 .item-2 {
     grid-column: 3 / 5;
     grid-row: 1 / 2;
+    object-position: center 50%;
 }
 
 /* Second Row: 4 Small Images */

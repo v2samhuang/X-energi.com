@@ -9,6 +9,109 @@
   <meta name="description"
     content="Green Powered · Profit Driven · Partner Enabled. Transforming African last-mile delivery with clean, efficient, and cost-effective solutions." />
   <link rel="stylesheet" href="style.css">
+  <style>
+    .stations-section .stations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .station-card {
+      background: transparent; /* remove white outline so card matches section */
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45); /* subtle darker shadow */
+      display: flex;
+      flex-direction: column;
+      border: none;
+    }
+
+    .station-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background: transparent;
+    }
+
+    .station-card-body {
+      padding: 1.25rem;
+      background: #2b2b2b; /* grey body to match other pages */
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      flex: 1;
+    }
+
+    .station-card-body h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      color: #ffffff; /* title on dark grey */
+      font-weight: 700;
+    }
+
+    .station-card-body p {
+      margin: 0;
+      color: #d4d4d4; /* paragraph on dark grey */
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .station-card-body .btn {
+      margin-top: auto;
+      align-self: flex-start;
+      background: #E0B000;
+      border-color: #E0B000;
+      color: #121212; /* black text for Get Directions */
+    }
+
+    .station-card-body .btn:hover {
+      background: #cf9a00;
+      color: #121212;
+    }
+
+    .stations-banner {
+      margin-top: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(140px, 1fr));
+      gap: 1rem;
+      background: #121212;
+      border-radius: 1.5rem;
+      color: #E0B000;
+      padding: 1.5rem;
+      text-align: center;
+      align-items: center;
+    }
+
+    .stations-banner .banner-item strong {
+      display: block;
+      font-size: 2rem;
+      color: #E0B000;
+    }
+
+    .stations-banner .banner-item span {
+      display: block;
+      margin-top: 0.5rem;
+      color: #d4d4d4;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 960px) {
+      .stations-section .stations-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+      }
+      .stations-banner {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .stations-section .stations-grid,
+      .stations-banner {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -21,6 +124,7 @@
         <li><a href="#overview">Overview</a></li>
         <li><a href="#business-models">Business Models</a></li>
         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#stations">Charging Stations</a></li>
         <li><a href="#technology">Technology</a></li>
         <li><a href="#contact" class="btn btn-primary">Contact Us</a></li>
       </ul>
@@ -61,7 +165,7 @@
               creating a sustainable ecosystem that benefits riders, businesses, and the environment.</p>
           </div>
           <div class="overview-image">
-            <img src="/images/overview.png" alt="X-ENERGI Delivery Rider"
+            <img src="/images/pic31.jpg" alt="X-ENERGI Delivery Rider"
               class="img-fluid rounded-lg shadow-lg">
           </div>
         </div>
@@ -142,6 +246,62 @@
           </div>
           <div class="gallery-item item-6">
             <img src="/images/pic16.jpg" alt="Battery Technology">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Charging Stations Section -->
+    <section id="stations" class="section-padding stations-section">
+      <div class="container animate-on-scroll">
+        <h2 class="section-title">Charging Stations</h2>
+        <p class="section-subtitle">Three charging stations with fast charging, secure access, and solar-ready infrastructure.</p>
+
+        <div class="stations-grid">
+          <article class="station-card">
+            <img src="/images/pic28.jpg" alt="East Park Mall Charging Station">
+            <div class="station-card-body">
+              <h3>Great East Rd Station</h3>
+              <p>Solar-assisted fast charging piles, secure rider access, and rapid battery swapping.</p>
+              <a href="https://maps.app.goo.gl/5WNRfGx9AgJkBZcu5" class="btn btn-primary" target="_blank" rel="noopener">Get Directions</a>
+            </div>
+          </article>
+
+          <article class="station-card">
+            <img src="/images/pic29.jpeg" alt="Levy Junction Charging Station">
+            <div class="station-card-body">
+              <h3>Kabulonga Station</h3>
+              <p>24/7 power availability, remote monitoring, and flexible charging for delivery fleets.</p>
+              <a href="https://maps.app.goo.gl/ZXQav9VkXyuFPwYY9" class="btn btn-primary" target="_blank" rel="noopener">Get Directions</a>
+            </div>
+          </article>
+
+          <article class="station-card">
+            <img src="/images/pic30.jpeg" alt="Longacres Charging Station">
+            <div class="station-card-body">
+              <h3>Olympia</h3>
+              <p>High-capacity battery storage, smart charging management, and swap-ready infrastructure.</p>
+              <a href="https://maps.app.goo.gl/hQrfh9qNECP5nftKA" class="btn btn-primary" target="_blank" rel="noopener">Get Directions</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="stations-banner">
+          <div class="banner-item">
+            <strong>3</strong>
+            <span>Charging Stations</span>
+          </div>
+          <div class="banner-item">
+            <strong>100+</strong>
+            <span>Daily Swaps</span>
+          </div>
+          <div class="banner-item">
+            <strong>24/7</strong>
+            <span>Support</span>
+          </div>
+          <div class="banner-item">
+            <strong>99%</strong>
+            <span>Network Uptime</span>
           </div>
         </div>
       </div>

@@ -70,45 +70,131 @@
       color: #121212;
     }
 
-    .stations-banner {
-      margin-top: 2.5rem;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(140px, 1fr));
-      gap: 1rem;
-      background: #121212;
-      border-radius: 1.5rem;
-      color: #E0B000;
-      padding: 1.5rem;
+    .video-intro {
+      max-width: 900px;
+      margin: 2rem auto 1rem;
       text-align: center;
-      align-items: center;
+      color: #ffffff;
     }
 
-    .stations-banner .banner-item strong {
-      display: block;
-      font-size: 2rem;
-      color: #E0B000;
-    }
-
-    .stations-banner .banner-item span {
-      display: block;
-      margin-top: 0.5rem;
+    .video-intro p {
+      margin: 0.75rem auto 0;
+      max-width: 760px;
       color: #d4d4d4;
-      font-size: 0.95rem;
+      line-height: 1.7;
+      font-size: 1rem;
     }
 
-    @media (max-width: 960px) {
-      .stations-section .stations-grid {
-        grid-template-columns: repeat(2, minmax(220px, 1fr));
-      }
-      .stations-banner {
-        grid-template-columns: repeat(2, minmax(140px, 1fr));
-      }
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     @media (max-width: 680px) {
       .stations-section .stations-grid,
       .stations-banner {
         grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+
+    .contact-info-panel,
+    .contact-actions-panel {
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-info-panel {
+      background: linear-gradient(135deg, #FFC800, #ffe07a);
+      color: #121212;
+    }
+
+    .contact-info-panel h3 {
+      color: #121212;
+      margin-bottom: 0.75rem;
+      font-size: 1.8rem;
+    }
+
+    .contact-info-panel p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+      color: #2a2a2a;
+    }
+
+    .contact-info-panel .info-item {
+      border-bottom: 1px solid rgba(18, 18, 18, 0.12);
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.85rem;
+      font-size: 1rem;
+    }
+
+    .contact-info-panel .info-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .contact-actions-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-actions-panel .btn {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      padding: 0.95rem 1.15rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+    }
+
+    .contact-actions-panel .btn-primary {
+      background: linear-gradient(135deg, #FFC800, #ffe07a);
+      color: #121212;
+    }
+
+    .contact-actions-panel .btn-outline {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info-panel,
+      .contact-actions-panel {
+        padding: 1.5rem;
       }
     }
   </style>
@@ -236,13 +322,13 @@
             <img src="/images/pic26.jpg" alt="Battery Swap Station">
           </div>
           <div class="gallery-item item-3">
-            <img src="/images/pic25.jpg" alt="Rider in Action">
+            <img src="/images/pic33.jpg" alt="Rider in Action">
           </div>
           <div class="gallery-item item-4">
-            <img src="/images/pic10.jpg" alt="Solar Infrastructure">
+            <img src="/images/pic36.jpg" alt="Solar Infrastructure">
           </div>
           <div class="gallery-item item-5">
-            <img src="/images/pic14.png" alt="Happy Rider">
+            <img src="/images/pic34.JPG" alt="Happy Rider">
           </div>
           <div class="gallery-item item-6">
             <img src="/images/pic16.jpg" alt="Battery Technology">
@@ -286,63 +372,43 @@
           </article>
         </div>
 
-        <div class="stations-banner">
-          <div class="banner-item">
-            <strong>3</strong>
-            <span>Charging Stations</span>
-          </div>
-          <div class="banner-item">
-            <strong>100+</strong>
-            <span>Daily Swaps</span>
-          </div>
-          <div class="banner-item">
-            <strong>24/7</strong>
-            <span>Support</span>
-          </div>
-          <div class="banner-item">
-            <strong>99%</strong>
-            <span>Network Uptime</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Technology Section -->
-    <section id="technology" class="section-padding bg-darker">
+    <section id="technology" class="section-padding bg-darker" style="background: transparent;">
       <div class="container animate-on-scroll">
         <h2 class="section-title">Technical Highlights</h2>
         <div class="grid grid-2">
-          <div class="tech-item">
-            <div class="icon">🏍️</div>
+          <div class="tech-item" style="background: transparent; padding: 1.25rem 0;">
+            <div class="icon"><img src="/icons/electric-scooter.png" alt="" style="width: 45%; max-width: 100px; height: auto; display: block; margin: 0 auto;"></div>
             <h3>Electric Motorcycle</h3>
-            <ul>
+            <ul style="text-align: center; display: inline-block; margin: 0 auto; padding: 0;">
               <li>2000W high-performance motor</li>
               <li>Range &gt;80km per charge</li>
               <li>3-year warranty</li>
             </ul>
           </div>
-          <div class="tech-item">
-            <div class="icon">🔋</div>
+          <div class="tech-item" style="background: transparent; padding: 1.25rem 0;">
+            <div class="icon"><img src="/icons/accumulator.png" alt="" style="width: 45%; max-width: 100px; height: auto; display: block; margin: 0 auto;"></div>
             <h3>Battery System</h3>
-            <ul>
+            <ul style="text-align: center; display: inline-block; margin: 0 auto; padding: 0;">
               <li>72V50A lithium battery</li>
               <li>Smart GPS + BMS management</li>
               <li>Remote monitoring capability</li>
             </ul>
           </div>
-          <div class="tech-item">
-            <div class="icon">⚡</div>
+          <div class="tech-item" style="background: transparent; padding: 1.25rem 0;">
+            <div class="icon"><img src="/icons/battery (1).png" alt="" style="width: 45%; max-width: 100px; height: auto; display: block; margin: 0 auto;"></div>
             <h3>Battery Swap</h3>
-            <ul>
+            <ul style="text-align: center; display: inline-block; margin: 0 auto; padding: 0;">
               <li>Swap in under 1 minute</li>
               <li>Multiple swap station locations</li>
               <li>50% extra battery packs above vehicle count</li>
             </ul>
           </div>
-          <div class="tech-item">
-            <div class="icon">☀️</div>
+          <div class="tech-item" style="background: transparent; padding: 1.25rem 0;">
+            <div class="icon"><img src="/icons/solar-energy.png" alt="" style="width: 45%; max-width: 100px; height: auto; display: block; margin: 0 auto;"></div>
             <h3>Power System</h3>
-            <ul>
+            <ul style="text-align: center; display: inline-block; margin: 0 auto; padding: 0;">
               <li>Solar + grid dual power supply</li>
               <li>Real-time delivery tracking</li>
               <li>Solar-ready charging cabinets</li>
@@ -356,10 +422,10 @@
     <section id="contact" class="section-padding">
       <div class="container animate-on-scroll">
         <h2 class="section-title">Contact Us</h2>
-        <div class="contact-wrapper grid grid-2">
-          <div class="contact-info">
+        <div class="contact-wrapper">
+          <div class="contact-info-panel">
             <h3>Get in Touch</h3>
-            <p>Get in touch for a free franchise consultation and see real-world results at our Zambia branch.</p>
+            <p>Choose the right next step to connect with us as a rider, partner, or investor.</p>
             <div class="info-item">
               <strong>Address:</strong> Lusaka, Zambia
             </div>
@@ -367,33 +433,14 @@
               <strong>WhatsApp/Phone:</strong> +260571919999
             </div>
             <div class="info-item">
-              <strong>Email:</strong> xenergi123@gmail.com
+              <strong>Email:</strong> info@xenergi.com
             </div>
           </div>
-          <form id="contact-form" class="contact-form">
-            <input id="name" name="name" type="text" placeholder="Your Name" required>
-            <input id="email" name="email" type="email" placeholder="Your Email" required>
-            <select id="interest" name="interest">
-              <option value="" disabled selected>Interested In...</option>
-              <option value="Rider Franchise">Rider Franchise</option>
-              <option value="Charging Station Franchise">Charging Station Franchise</option>
-              <option value="Other">Other</option>
-            </select>
-            <textarea id="message" name="message" placeholder="Message" rows="5"></textarea>
-
-            <div class="send-method">
-              <label>
-                <input type="radio" name="sendMethod" value="whatsapp" checked>
-                Send via WhatsApp
-              </label>
-              <label style="margin-left:12px;">
-                <input type="radio" name="sendMethod" value="email">
-                Send via Email
-              </label>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
+          <div class="contact-actions-panel">
+            <a href="https://forms.gle/bAqscr7UjKuBjiqT9" class="btn btn-primary full-width" target="_blank" rel="noopener">Become a rider</a>
+            <a href="https://forms.gle/BxzSYr3fKc7bcPDz9" class="btn btn-outline full-width" target="_blank" rel="noopener">Invest / partner with us</a>
+            <a href="https://wa.me/260571919999" class="btn btn-primary full-width" target="_blank" rel="noopener">Contact on WhatsApp</a>
+          </div>
         </div>
       </div>
     </section>
@@ -427,43 +474,6 @@
 
   <script>
     (function() {
-      const form = document.getElementById('contact-form');
-      if (form) {
-        const whatsappNumber = '260571919999';
-        const emailAddress = 'xenergi123@gmail.com';
-
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          const name = document.getElementById('name')?.value?.trim() || '';
-          const email = document.getElementById('email')?.value?.trim() || '';
-          const interest = document.getElementById('interest')?.value || '';
-          const message = document.getElementById('message')?.value?.trim() || '';
-          const method = document.querySelector('input[name="sendMethod"]:checked')?.value || 'whatsapp';
-
-          const parts = [];
-          if (name) parts.push(`Name: ${name}`);
-          if (email) parts.push(`Email: ${email}`);
-          if (interest) parts.push(`Interest: ${interest}`);
-          if (message) parts.push(`Message: ${message}`);
-
-          if (parts.length === 0) {
-            alert('Please fill at least one field before sending.');
-            return;
-          }
-
-          const text = parts.join('\n');
-
-          if (method === 'whatsapp') {
-            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
-            window.open(url, '_blank');
-          } else {
-            const subject = interest ? `Inquiry: ${interest}` : 'Website Inquiry';
-            const mailto = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
-            window.location.href = mailto;
-          }
-        });
-      }
-
       // Hamburger menu toggle
       const toggle = document.querySelector('.mobile-menu-toggle');
       const navLinks = document.querySelector('.nav-links');
